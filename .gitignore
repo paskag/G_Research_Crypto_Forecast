@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+#machine_learning
+/machine_learning/asset_details.csv
+/machine_learning/example_sample_submission.csv
+/machine_learning/example_test.csv
+/machine_learning/supplemental_train.csv
+/machine_learning/train.csv
+/machine_learning/gresearch_crypto/
