@@ -1,3 +1,4 @@
+from numpy import nan_to_num
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 
@@ -12,6 +13,8 @@ def preprocess(df, asset_details):
     asset_details = asset_details.set_index("Asset_ID")
     #добавляем название крипты
     df.insert(0, "Name", df["Asset_ID"].apply(lambda x: asset_details.loc[x][-1]))
+    #переименование EOS.IO к EOS_IO
+    df["Name"] = df["Name"].apply(lambda x: "EOS_IO" if x == "EOS.IO" else x)
     #удаление строк с недостающими target
     df_without_null = df.drop(df[df["Target"].isnull()]["Name"].keys(), axis=0)
     #StandardScaler
