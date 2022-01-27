@@ -24,6 +24,7 @@ def preprocess(df, asset_details):
     df_without_null_scaled = pd.DataFrame(df_without_null_scaled, columns=features)
     df_without_null_scaled["Target"] = list(df_without_null["Target"])
     df_without_null_scaled.insert(0, "Name", list(df_without_null["Name"]))
+    df_without_null_scaled.insert(0, "timestamp", list(df_without_null["timestamp"]))
     return df_without_null_scaled
 
 
