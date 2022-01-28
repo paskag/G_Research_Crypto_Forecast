@@ -32,6 +32,7 @@ def train_polynom(X_train, y_train):
 
 
 def train_svr(name, X_train, y_train):
+    #support vector regressor
     y_train = y_train * 1000
     model = SVR(**config_svr(name))
     model.fit(X_train, y_train)
@@ -55,7 +56,7 @@ def main():
     X_train, X_valid, y_train, y_valid = train_test_split("Bitcoin", df_without_null_scaled)
     crypto = train_rf("Bitcoin", X_train, y_train)
     save_model("Bitcoin", crypto)
-    print(joblib.load("saved_models/Bitcoin_model").predict(X_valid))
+    print(joblib.load("saved_models/Bitcoin_rf").predict(X_valid))
 
 
 if __name__ == "__main__":

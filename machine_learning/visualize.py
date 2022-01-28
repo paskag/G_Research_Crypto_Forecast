@@ -1,19 +1,19 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from joblib import load
+import joblib
 from predict import prediction
 from sklearn.preprocessing import PolynomialFeatures
 
 
 def visualization(name, df_without_null_scaled, method):
-    model = load(f"saved_models/{name}_{method}")
+    model = joblib.load(f"saved_models/{name}_{method}")
     crypto = df_without_null_scaled[df_without_null_scaled["Name"] == name]
     crypto = crypto.drop("Name", axis=1)
     x = crypto.drop(["timestamp", "Target"], axis=1)
     y = crypto["Target"]
     X_valid, y_valid = x[int(x.shape[0] * 0.8):], y[int(x.shape[0] * 0.8):]
-    if method == "svr" or "SVR":
+    if method == "svr" or method == "SVR":
         y_valid = y_valid * 1000
     if method == "polynom":
         pol = PolynomialFeatures(degree=2)

@@ -1,4 +1,3 @@
-from numpy import nan_to_num
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
 

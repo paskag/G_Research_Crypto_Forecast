@@ -27,7 +27,7 @@ def config_svr(name):
 
 
 def main():
-    test = config_rf("Dogecoin")
+    test = config_rf("Bitcoin")
     print(test)
 
 
