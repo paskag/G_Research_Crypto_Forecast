@@ -4,7 +4,8 @@ from sklearn.preprocessing import PolynomialFeatures
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.svm import SVR
 from preprocess import load, preprocess
-from config import config_rf, config_svr
+from config import config_rf, config_svr, config_xgb
+from xgboost import XGBRegressor
 from save import save_model
 import joblib
 
@@ -35,6 +36,12 @@ def train_svr(name, X_train, y_train):
     #support vector regressor
     y_train = y_train * 1000
     model = SVR(**config_svr(name))
+    model.fit(X_train, y_train)
+    return model
+
+
+def train_xgboost(name, X_train, y_train):
+    model = XGBRegressor(**config_xgb(name))
     model.fit(X_train, y_train)
     return model
 

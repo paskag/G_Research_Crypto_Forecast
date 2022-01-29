@@ -26,6 +26,20 @@ def config_svr(name):
     return configs[name]
 
 
+def config_xgb(name):
+    configs = {
+        "Bitcoin": {'max_depth': 3, 'n_estimators': 50},
+        "Bitcoin Cash": {'max_depth': 3, 'n_estimators': 50},
+        "Binance Coin": {'max_depth': 3, 'n_estimators': 50},
+        "EOS_IO": {'max_depth': 7, 'n_estimators': 50},
+        "Ethereum Classic": {'max_depth': 3, 'n_estimators': 50},
+        "Ethereum": {'max_depth': 3, 'n_estimators': 50},
+        "Litecoin": {'max_depth': 3, 'n_estimators': 50},
+        "Monero": {'max_depth': 3, 'n_estimators': 50}
+    }
+    return configs[name]
+
+
 def main():
     test = config_rf("Bitcoin")
     print(test)
