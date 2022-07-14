@@ -1,27 +1,27 @@
-# Мой второй проект. Сделан полностью мною
+# This is my second project. I made it myself.
 
-## Предсказание стоимости криптовалют. Данные взяты с соревнования [kaggle](https://www.kaggle.com/c/g-research-crypto-forecasting/overview)
+## Cost prediction of cryptocurrencies. The data is taken from the competition [kaggle](https://www.kaggle.com/c/g-research-crypto-forecasting/overview)
 
-#### Ежедневно на рынке криптовалют проводятся операции на сумму более 40 миллиардов долларов. Криптовалюты являются одними из самых популярных активов как для спекуляций, так и для инвестиций. При этом рынок криптовалят является достаточно волатильным. Датасет содержит информацию о прошлых сделках по криптовалютам. Например, таких Bitcoin и Ethereum. 
-#### Задача - предсказать будущую прибыль криптовалют.
+#### Over $40 billion worth of cryptocurrencies are traded every day. They are among the most popular assets for speculation and investment, yet have proven wildly volatile. The dataframe consists information about past transactions. For example: Bitcoin, Ethereium, etc.
+#### Task - predict the future profits of cryptocurrencies using machine learning.
 
-* ### Датасеты:
+* ### Dataframes:
 
-1. train.csv - обучающий датасет
+1. train.csv - train dataframe
 
-    * timestamp - отметка времени в минутах в формате Unix. Отметки времени в этом наборе данных кратны 60, что указывает на поминутные данные
-    * Asset_ID - ID криптовалюты
-    * Count - общее количество сделок, состоявшихся в данную минуту
-    * Open - стомиость криптовалюты в начале минуты, долларах США
-    * High - самая высокая стоимость криптовалюты за минуту, доллар США
-    * Low - самая низкая стоимость криптовалюты цена за минуту, доллар США
-    * Volume - количество единиц криптовалюты, проданных или купленных в течение минуты
-    * VWAP - средневзвешенная стоимость криптовалюты за минуту, доллар США
-    * Target - остаточная логарифмическая доходность актива на горизонте 15 минут
+    * timestamp - A timestamp for the minute covered by the row.
+    * Asset_ID - An ID code for the cryptoasset.
+    * Count - The number of trades that took place this minute.
+    * Open - The USD price at the beginning of the minute.
+    * High - The highest USD price during the minute.
+    * Low - The lowest USD price during the minute.
+    * Volume - The number of cryptoasset units traded during the minute.
+    * VWAP - The volume weighted average price for the minute.
+    * Target - Residual log-returns for the asset over a 15 minute horizon.
 
 
-2. asset_details.csv - датасет с дополнительной информацией
+2. asset_details.csv - dataframe with additional information
 
-    * Asset_ID - ID криптовалюты
-    * Weight - вес каждого актива, используемый для взвешивания его относительной важности в метрике оценки
-    * Asset_Name - название криптовалюты
+    * Asset_ID - An ID code for the cryptoasset.
+    * Weight - Weight of each assets used to weight its relative importance.
+    * Asset_Name - The name of cryptocurrency.
